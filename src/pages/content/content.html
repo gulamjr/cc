@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      SELECT YOUR INTEREST
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding>
+
+<ion-item no-padding>
+ <ion-title>
+       '#Ionic',
+    '#Angular',
+    '#Javascript',
+    '#Mobile',
+    '#Hybrid',
+    '#CrossPlatform'
+    </ion-title>
+</ion-item>
+  <rl-tag-input
+    [(ngModel)]="topics"
+    [addOnBlur]="false"
+    [addOnComma]="true"
+    [autocomplete]="true"
+    [autocompleteItems]="preparedTags"
+   
+    placeholder="Topics">
+  </rl-tag-input>
+
+<br><hr>
+ 
+<ion-list>
+  <ion-item *ngFor="let topic of topics">
+
+    <p>
+      {{topic }}
+    </p>
+  </ion-item>
+</ion-list>
+ 
+<ion-card *ngIf="topics.length === 0">
+  <ion-card-content>No Interest selected</ion-card-content>
+</ion-card>
+<button ion-button full (click)="addTalk(topics)">Find Courses!</button>
+
+</ion-content>

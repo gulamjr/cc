@@ -1,0 +1,48 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'CARDS_TITLE' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+<ion-list>
+
+  <ion-item >
+
+    <p>
+      {{topics }}
+    </p>
+  </ion-item>
+</ion-list>
+
+  <ion-card *ngFor="let item of cardItems">
+
+    <ion-item>
+      
+      <h2>{{item.user.name}}</h2>
+      <p>{{item.date}}</p>
+    </ion-item>
+
+   
+
+    <ion-card-content>
+      <p>{{item.content}}</p>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col>
+        
+      </ion-col>
+      <ion-col>
+        <button ion-button color="primary" clear small icon-start>
+            <ion-icon name='text'></ion-icon>
+            View Colleges
+          </button>
+      </ion-col>
+    
+    </ion-row>
+  </ion-card>
+</ion-content>
